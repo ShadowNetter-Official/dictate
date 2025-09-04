@@ -1,4 +1,4 @@
-# redo
+# dictate
 
 A pocket cli dictionary utility in **Rust** 🦀 
 
