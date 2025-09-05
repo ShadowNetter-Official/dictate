@@ -1,6 +1,6 @@
 # dictate
 
-A pocket cli dictionary utility in **Rust** 🦀 
+A pocket cli dictionary utility in **Rust** 🦀 using the Free Dictionary API
 
 ---
 
