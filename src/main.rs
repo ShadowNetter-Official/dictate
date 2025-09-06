@@ -16,7 +16,7 @@ fn main() {
     let api = "https://api.dictionaryapi.dev/api/v2/entries/en/";
     let args: Vec<String> = env::args().collect();
     // check argument length (minimum 2 arguments)
-    if args.len() < 3 {
+    if args.len() < 2 {
         help();
     } else {
         // takes user word and makes new API link
@@ -32,7 +32,11 @@ fn main() {
         let data: Value = serde_json::from_str(&res).expect("Invalid JSON");
         let val = &data[0];
         // number of definitions to show
-        let numstr = &args[2];
+        let numstr = if args.len() < 3 {
+            "1"
+        } else {
+            &args[2]
+        };
         let num: usize = match numstr.parse() {
             Ok(n) => n,
             Err(_) => 1
